@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import './HeaderSection.css';
 import brandLogo from '../../../images/logo2.png'
 
@@ -12,8 +12,8 @@ const HeaderSection = () => {
                         <img
                             alt="Red Onion Logo"
                             src={brandLogo}
-                            width="100"
-                            height="30"
+                            width="130"
+                            height="40"
                             className="d-inline-block align-top"
                         />{' '}
                     </Navbar.Brand>
