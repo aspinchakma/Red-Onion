@@ -1,0 +1,24 @@
+.header-container{
+    width:85%;
+    margin:auto;
+    background-color: white;
+}
+.sign_up_button{
+    border:1px solid  #d72631;
+    border-radius: 20px;
+    padding:4px 20px;
+    background-color:  #d72631;
+    color:white;
+}
+.sign_up_button:hover{
+    background-color: transparent;
+    color: #d72631;
+    transition: all .4s ease-in-out;
+}
+.header-common-button{
+    font-weight: 700;
+
+}
+.shopping-cart{
+    font-size: 20px;
+}
