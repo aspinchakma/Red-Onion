@@ -1,0 +1,31 @@
+.banner-container{
+    background-image: url('../../../images/bannerbackground.png');
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-bottom: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;;
+    
+}
+.banner-title{
+    font-weight: 500;
+    font-size: 2.9rem;
+}
+.search-field{
+    padding:10px 130px 10px 30px;
+    border:1px solid  #d72631;
+    border-radius: 30px;
+    outline: #d72631;
+}
+
+.search-button{
+    padding:11px 30px;
+    border-radius: 20px;
+    position:relative;
+    left: -40px;
+    border-radius: 30px;
+    border:1px solid  #d72631;
+    border-radius: 20px;
+    background-color:  #d72631;
+    color:white;
+}

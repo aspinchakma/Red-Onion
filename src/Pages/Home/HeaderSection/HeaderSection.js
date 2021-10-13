@@ -5,7 +5,7 @@ import brandLogo from '../../../images/logo2.png'
 
 const HeaderSection = () => {
     return (
-        <div className="header-container py-2">
+        <div className="header-container py-2 mx-auto">
             <Navbar bg="white" expand="lg">
                 <Container fluid>
                     <Navbar.Brand href="#home">
