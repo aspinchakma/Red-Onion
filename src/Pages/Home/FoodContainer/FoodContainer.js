@@ -42,7 +42,7 @@ const FoodContainer = () => {
 
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div className="food_container_header mb-3">
                 <p onClick={handleBreakfast}>Breakfast</p>
                 <p onClick={handleLunch}>Lunch</p>
