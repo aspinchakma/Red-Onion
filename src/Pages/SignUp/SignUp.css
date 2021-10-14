@@ -1,0 +1,47 @@
+.main-form-section{
+    background-image: url('../../images/bannerbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px;
+}
+
+.form-container{
+   text-align: center;
+}
+.form-container input{
+    width: 100%;
+    padding:.7rem;
+    border-radius: 5px;
+    border:none;
+    color: black;
+    border:1px solid transparent;
+}
+.form-container input:focus{
+    outline:#5c3c92;
+    border:1px solid #5c3c92;
+    color:#5c3c92;
+}
+
+.logo-container{
+    text-align: center;
+}
+.form-container button{
+    width: 100%;
+    color: white;
+    background-color:#d72631;
+    border:1px solid #d72631;
+    padding: 10px;
+    border-radius: 5px;
+}
+.form-container button:hover{
+    color:#d72631;
+    background-color: white;
+    transition: all .4s ease-in-out;
+}
+.already-have-account a{
+    color: #d72631;
+    text-decoration: none;
+}
+.already-have-account a:hover{
+    color:blue;
+}

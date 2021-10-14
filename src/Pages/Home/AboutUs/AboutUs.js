@@ -8,7 +8,7 @@ const AboutUs = () => {
 
 
     return (
-        <div className="container">
+        <div className="container about-us-main-container">
             <h2>Why you choose use</h2>
             <div className="row">
                 <div className="col-lg-6">

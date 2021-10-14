@@ -1,0 +1,16 @@
+.footer-container{
+    width: 90%;
+    margin:auto;
+    padding: 2rem 2rem .3rem 2rem;
+}
+.main-footer-section{
+    background-color:#212121;
+    color: white;
+}
+.footer-mini-container p:hover{
+    text-decoration: underline;
+   cursor: pointer;
+}
+.copyrights{
+    color: rgb(112, 121, 131);
+}
