@@ -43,6 +43,7 @@ const SignUp = () => {
                             <input type="password" name="" id="" placeholder="Confirm Password" required />
                         </Form.Group>
 
+
                         <Button onClick={handleSubmitButton} variant="primary" type="submit">
                             Sign up
                         </Button>

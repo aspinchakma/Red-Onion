@@ -2,7 +2,8 @@ import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logoImg from "../../images/logo2.png"
+import logoImg from "../../images/logo2.png";
+import './SignIn.css';
 
 const SignIn = () => {
     const handleSubmitButton = e => {
@@ -33,21 +34,26 @@ const SignIn = () => {
 
                             <input type="password" name="" id="" placeholder="Password" required />
                         </Form.Group>
-
-
                         <Button onClick={handleSubmitButton} variant="primary" type="submit">
                             Login
                         </Button>
-                        <p className="text-center mt-3 already-have-account">
-                            <Link to="/signUp">Create an account ?</Link>
+                        <p className=" mt-3 already-have-account row">
+                            <Link to="/signUp" className="col-lg-6 text-left">Create an account ?</Link>
+                            <span className="already-have-account col-lg-6 text-right forgot">Forgot password</span>
                         </p>
                     </Form>
+                    <p className="text-center">OR</p>
+                    <div className="icon-container">
+                        <img className="mx-2" src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google logo" />
+                        <img className="mx-2" src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="facebook logo" />
+                    </div>
+
                 </div>
                 <div className="col-lg-4">
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

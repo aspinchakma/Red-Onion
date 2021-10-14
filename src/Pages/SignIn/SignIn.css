@@ -1,0 +1,21 @@
+.check-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.check-container input{
+    width: 20%;
+}
+.check-container{
+    width:100%;
+}
+.forgot{
+    cursor: pointer;
+}
+.icon-container{
+    text-align: center;
+    
+}
+.icon-container img{
+    cursor: pointer;
+}
