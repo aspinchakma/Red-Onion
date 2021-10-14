@@ -2,7 +2,6 @@
     background-image: url('../../../images/bannerbackground.png');
     padding-top: 200px;
     padding-bottom: 200px;
-    margin-bottom: 400px;
     background-repeat: no-repeat;
     background-size: cover;;
     
@@ -19,7 +18,7 @@
 }
 
 .search-button{
-    padding:11px 30px;
+    padding:11px 40px;
     border-radius: 20px;
     position:relative;
     left: -40px;
