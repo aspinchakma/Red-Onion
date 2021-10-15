@@ -1,11 +1,27 @@
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import logoImg from "../../images/logo2.png";
 import './SignIn.css';
 
 const SignIn = () => {
+    const { signInWithGoogle, signInWithFacebook } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+
+    const destination = location.state?.from || './home';
+    const signInGoogle = () => {
+        signInWithGoogle()
+            .then(result => {
+                history.push(destination)
+
+            })
+
+    }
+
+
     const handleSubmitButton = e => {
         e.preventDefault();
     }
@@ -44,8 +60,8 @@ const SignIn = () => {
                     </Form>
                     <p className="text-center">OR</p>
                     <div className="icon-container">
-                        <img className="mx-2" src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google logo" />
-                        <img className="mx-2" src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="facebook logo" />
+                        <img className="mx-2" onClick={signInGoogle} src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google logo" />
+                        <img className="mx-2" onClick={signInWithFacebook} src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="facebook logo" />
                     </div>
 
                 </div>

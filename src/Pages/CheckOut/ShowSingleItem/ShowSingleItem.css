@@ -1,0 +1,22 @@
+.single-item-card{
+    background-color:  #F5F5F5;
+    border-radius: 10px;
+    padding: .4rem;
+}
+.cross-container{
+    text-align: right;
+}
+.cross-sign{
+    font-size: 24px;
+    margin-top: 50%;
+    color: #d72631;
+    cursor: pointer;
+}
+.single-item-price{
+    color:#077b8a;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.text-container-single-items{
+    line-height: 1.1rem;
+}

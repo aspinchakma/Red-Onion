@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useData from '../../../hooks/useData';
 import Food from '../Food/Food';
 import './FoodContainer.css'
 
 const FoodContainer = () => {
     const [food] = useData();
+    // console.log(food)
     const Breakfast = [];
     const lunch = [];
     const dinner = [];
@@ -25,9 +27,7 @@ const FoodContainer = () => {
 
     }
 
-    console.log('a', Breakfast)
-    console.log('b', lunch)
-    console.log('c', dinner)
+
     const [showItems, setShowItems] = useState([]);
 
     const handleBreakfast = () => {
@@ -39,7 +39,6 @@ const FoodContainer = () => {
     const handleDinner = () => {
         setShowItems(dinner)
     }
-
 
     return (
         <div className="container mb-5">
@@ -54,7 +53,8 @@ const FoodContainer = () => {
                 }
             </Row>
             <div className="text-center mt-4">
-                <button className="check-out-button">Checkout Your Food</button>
+                <Link to="/checkout"><button className="check-out-button">Checkout Your Food</button></Link>
+
             </div>
         </div>
     );

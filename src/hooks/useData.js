@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 const useData = () => {
-    const [food, setFood] = useState({});
+    const [food, setFood] = useState([]);
     useEffect(() => {
-        fetch('./foods.json')
+        fetch('./foods.JSON')
             .then(response => response.json())
             .then(data => setFood(data))
     }, [])
