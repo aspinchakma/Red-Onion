@@ -32,6 +32,18 @@
     color:white;
 
 }
+.place-order-button{
+    padding: 11px 0px 11px 0px;
+    border-radius: 5px;
+    background-color:  #039fbe;
+    border: 1px solid  #039fbe;
+    color:white;
+}
+.place-order-button:hover{
+    background-color: white;
+    color:  #039fbe;
+    transition: all .3s ease-in-out;
+}
 .order-form-container textarea:focus{
     color:blue;
 }

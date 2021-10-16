@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import './CheckOut.css';
 import useData from '../../hooks/useData';
 import useFirebase from '../../hooks/useFirebase'
 import ShowSingleItem from './ShowSingleItem/ShowSignleItem';
 
+
 const CheckOut = () => {
+
     const [street, setStreet] = useState('');
     const [getText, setGetText] = useState('');
     const [food] = useData();
+    const [cart, setCart] = useState([]);
+    // console.log(cart)
     const { getDb, removeItem } = useFirebase();
+
 
 
     const handleSaveButton = e => {
@@ -23,29 +28,47 @@ const CheckOut = () => {
 
 
     }
-    const result = [];
-    const data = getDb();
-    const dbDataInObject = JSON.parse(data);
-    if (food.length) {
-        for (const [key, value] of Object.entries(dbDataInObject)) {
-            const ourItems = food.find(food => food.id == key);
-            if (ourItems) {
-                ourItems.quantity = value;
+
+    useEffect(() => {
+        let result = [];
+        const data = getDb();
+        const dbDataInObject = JSON.parse(data);
+        if (food.length) {
+            for (const [key, value] of Object.entries(dbDataInObject)) {
+                // console.log(key)
+                const ourItems = food.find(food => food.id == key);
+                if (ourItems) {
+                    ourItems.quantity = value;
+                }
+                result.push(ourItems);
             }
-            result.push(ourItems);
         }
+        setCart(result)
+    }, [food])
+
+    // console.log(cart)
+
+
+    const handleRemoveItems = (id) => {
+        console.log(id);
+        const newResult = cart.filter(food => food.id != id);
+        setCart(newResult)
+        removeItem(id)
     }
-    // console.log(result)
 
+    let totalQuantity = 0;
+    for (const item of cart) {
+        totalQuantity = totalQuantity + item.quantity;
+    };
+    let totalPrice = 0;
+    for (const item of cart) {
+        totalPrice = + totalPrice + (item.price * item.quantity);
+    }
 
-    // for (const [key, value] of Object.entries(dbDataInObject)) {
-    //     console.log(key, value)
-    // }
-    // console.log(result)
+    const tax = 5.00
 
-    // console.log(food)
-    // console.log(JSON.parse(data))
-
+    const deliveryFee = 10;
+    const totalProductsPrice = totalQuantity + totalPrice + tax + deliveryFee;
 
     return (
         <div className="container my-4 row mx-auto">
@@ -90,9 +113,25 @@ const CheckOut = () => {
                 </div>
                 <div>
                     {
-                        result.length && result.map(food => <ShowSingleItem key={food.id} removeItem={removeItem} food={food}></ShowSingleItem>)
+                        cart.map(food => <ShowSingleItem key={food.id}
+                            handleRemoveItems={handleRemoveItems} food={food}></ShowSingleItem>)
                     }
                 </div>
+                {
+                    cart.length ? <div className="row">
+                        <p className="col-lg-6">Subtotal.{totalQuantity} items</p>
+                        <p className="col-lg-6 text-center">${totalPrice.toFixed(2)}</p>
+                        <p className="col-lg-6">tax</p>
+                        <p className="col-lg-6 text-center">${tax}.00</p>
+                        <p className="col-lg-6">Delivery Fee</p>
+                        <p className="col-lg-6 text-center">${deliveryFee}.00</p>
+                        <p className="col-lg-6">Total</p>
+                        <p className="col-lg-6 text-center">${totalProductsPrice}</p>
+                        <button className="col-lg-12 text-center place-order-button">
+                            Place Order
+                        </button>
+                    </div> : <div><h3>Please Add Items</h3></div>
+                }
             </div>
         </div>
     );
