@@ -1,0 +1,54 @@
+
+.map-section{
+    border-radius: 10px;
+    overflow: hidden;
+    padding:0px;
+}
+
+.delivery-details{
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.delivery-information-header{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.delivery-information-container{
+    background-color: white;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 10px;
+}
+.delivery-destination{
+    color: #a39a9a;
+    font-size: .9rem;
+}
+.delivery-man-details{
+    background-color: white;
+    border-radius: 10px;
+    line-height: 1rem;
+}
+.delivery-man-details h4{
+    font-size: 1.2rem;
+}
+.delivery-man-details p{
+    font-size: .9rem;
+    color: #a39a9a;
+}
+
+.contact-button-container button{
+    width: 100%;
+    padding: 8px 0px 8px 0px;
+    border-radius: 5px;
+    background-color: #d72631;
+    border: 1px solid #d72631;
+    color: white;
+}
+.contact-button-container button:hover{
+    background-color: white;
+    color: #d72631;
+    transition: all .3s ease-in-out;
+}

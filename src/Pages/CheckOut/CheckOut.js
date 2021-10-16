@@ -4,6 +4,7 @@ import './CheckOut.css';
 import useData from '../../hooks/useData';
 import useFirebase from '../../hooks/useFirebase'
 import ShowSingleItem from './ShowSingleItem/ShowSignleItem';
+import { Link } from 'react-router-dom';
 
 
 const CheckOut = () => {
@@ -19,7 +20,7 @@ const CheckOut = () => {
 
     const handleSaveButton = e => {
         e.preventDefault();
-        setStreet(getText)
+        setStreet(getText);
 
     }
     const getTextFromInputField = e => {
@@ -126,10 +127,13 @@ const CheckOut = () => {
                         <p className="col-lg-6">Delivery Fee</p>
                         <p className="col-lg-6 text-center">${deliveryFee}.00</p>
                         <p className="col-lg-6">Total</p>
-                        <p className="col-lg-6 text-center">${totalProductsPrice}</p>
-                        <button className="col-lg-12 text-center place-order-button">
-                            Place Order
-                        </button>
+                        <p className="col-lg-6 text-center">${totalProductsPrice.toFixed(2)}</p>
+
+                        <Link to="/checkout/placeOrder">
+                            <button className="col-lg-12 text-center place-order-button">
+                                Place Order
+                            </button>
+                        </Link>
                     </div> : <div><h3>Please Add Items</h3></div>
                 }
             </div>

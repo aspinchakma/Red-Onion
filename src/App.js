@@ -9,6 +9,7 @@ import CheckOut from "./Pages/CheckOut/CheckOut";
 import FoodDetails from "./Pages/FoodDetails/FoodDetails";
 import HeaderSection from "./Pages/Home/HeaderSection/HeaderSection";
 import Home from './Pages/Home/Home';
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import SignIn from "./Pages/SignIn/SignIn";
@@ -36,9 +37,12 @@ function App() {
             <Route path="/signIn">
               <SignIn></SignIn>
             </Route>
-            <Route path="/checkout">
+            <PrivateRoute exact path="/checkout">
               <CheckOut></CheckOut>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/checkout/placeOrder">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <Route path="*">
 
             </Route>

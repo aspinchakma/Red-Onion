@@ -45,7 +45,9 @@ const useFirebase = () => {
         }
 
     }
-
+    const getStreetName = name => {
+        console.log(name)
+    }
 
 
     const signInWithGoogle = () => {
@@ -82,7 +84,8 @@ const useFirebase = () => {
         signInWithFacebook,
         addToDatabase,
         getDb,
-        removeItem
+        removeItem,
+        getStreetName,
     }
 }
 export default useFirebase;

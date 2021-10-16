@@ -7,7 +7,7 @@ import logoImg from "../../images/logo2.png";
 import './SignIn.css';
 
 const SignIn = () => {
-    const { signInWithGoogle, signInWithFacebook } = useAuth();
+    const { signInWithGoogle, signInWithFacebook, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
@@ -15,9 +15,11 @@ const SignIn = () => {
     const signInGoogle = () => {
         signInWithGoogle()
             .then(result => {
-                history.push(destination)
+                history.push(destination);
+                setIsLoading(false)
 
             })
+
 
     }
 
