@@ -28,13 +28,13 @@
 .form-container button{
     width: 100%;
     color: white;
-    background-color:#d72631;
-    border:1px solid #d72631;
+    background-color:#4203c9;
+    border:1px solid #4203c9;
     padding: 10px;
     border-radius: 5px;
 }
 .form-container button:hover{
-    color:#d72631;
+    color:#4203c9;
     background-color: white;
     transition: all .4s ease-in-out;
 }
@@ -51,12 +51,13 @@ border: 1px solid transparent;
 
 }
 .error-message p{
-    font-size: 15px;
-    color:blue;
+    font-size: .9rem;
+    color:red;
 
 }
 .passwordError{
     height: 20px;
     color:red;
+    font-size: .8rem;
     border: 1px solid transparent;
 }
