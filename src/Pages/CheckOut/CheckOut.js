@@ -14,7 +14,7 @@ const CheckOut = () => {
     const [food] = useData();
     const [cart, setCart] = useState([]);
     // console.log(cart)
-    const { getDb, removeItem } = useFirebase();
+    const { getDb, removeItem, removeAllItemsFromLocalStorage } = useFirebase();
 
 
 
@@ -130,7 +130,7 @@ const CheckOut = () => {
                         <p className="col-lg-6 text-center">${totalProductsPrice.toFixed(2)}</p>
 
                         <Link to="/checkout/placeOrder">
-                            <button className="col-lg-12 text-center place-order-button">
+                            <button onClick={removeAllItemsFromLocalStorage} className="col-lg-12 text-center place-order-button">
                                 Place Order
                             </button>
                         </Link>

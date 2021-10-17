@@ -7,7 +7,7 @@ import logoImg from "../../images/logo2.png";
 import './SignIn.css';
 
 const SignIn = () => {
-    const { signInWithGoogle, signInWithFacebook, setIsLoading } = useAuth();
+    const { signInWithGoogle, signInWithFacebook } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
@@ -16,11 +16,20 @@ const SignIn = () => {
         signInWithGoogle()
             .then(result => {
                 history.push(destination);
-                setIsLoading(false)
 
+            }).catch(error => {
+                console.log(error)
             })
 
 
+    }
+    const signInFacebook = () => {
+        signInWithFacebook()
+            .then(result => {
+                history.push(destination)
+            }).catch(error => {
+                console.log(error)
+            })
     }
 
 
@@ -63,7 +72,7 @@ const SignIn = () => {
                     <p className="text-center">OR</p>
                     <div className="icon-container">
                         <img className="mx-2" onClick={signInGoogle} src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google logo" />
-                        <img className="mx-2" onClick={signInWithFacebook} src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="facebook logo" />
+                        <img className="mx-2" onClick={signInFacebook} src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="facebook logo" />
                     </div>
 
                 </div>

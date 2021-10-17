@@ -45,3 +45,18 @@
 .already-have-account a:hover, .already-have-account:hover{
     color:blue;
 }
+.error-message{
+height: 20px;
+border: 1px solid transparent;
+
+}
+.error-message p{
+    font-size: 15px;
+    color:blue;
+
+}
+.passwordError{
+    height: 20px;
+    color:red;
+    border: 1px solid transparent;
+}

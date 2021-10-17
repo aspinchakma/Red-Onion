@@ -55,13 +55,8 @@ const useFirebase = () => {
 
     }
     const signInWithFacebook = () => {
-        signInWithPopup(auth, facebookProvider)
-            .then(result => {
-                const user = result.user;
-                setUser(user)
-            }).catch(error => {
-                setError(error.message)
-            })
+        return signInWithPopup(auth, facebookProvider);
+
     }
     onAuthStateChanged(auth, user => {
         if (user) {
@@ -75,6 +70,9 @@ const useFirebase = () => {
             setError(error.message)
         })
     }
+    const removeAllItemsFromLocalStorage = () => {
+        localStorage.clear()
+    }
 
     return {
         user,
@@ -86,6 +84,7 @@ const useFirebase = () => {
         getDb,
         removeItem,
         getStreetName,
+        removeAllItemsFromLocalStorage,
     }
 }
 export default useFirebase;
