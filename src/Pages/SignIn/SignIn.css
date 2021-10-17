@@ -19,3 +19,12 @@ align-items: center;
 .icon-container img{
     cursor: pointer;
 }
+.sign-in-error-message{
+    border:1px solid transparent;
+    height: 20px;
+
+}
+.sign-in-error-message p{
+    font-size: .9rem;
+    color:red;
+}
